@@ -1,39 +1,30 @@
-# Compiler
-CC=g++
+CXXFLAGS = -Wall -std=c++11 -fPIC
 
-# Compilation flags
-CFLAGS= -std=c++17 -Wall
+SRC_DIR = src
+LIB_DIR = lib
 
-# Source directories
-SRC_DIR=src
-OBJ_DIR=obj
-BIN_DIR=bin
+STATIC_LIB = $(LIB_DIR)/libkoolos.a
+SHARED_LIB = $(LIB_DIR)/libkoolos.so
 
-# Find all .cpp files in src/ and its subdirectories
-SRC=$(shell find $(SRC_DIR) -name '*.cpp')
+LIB_SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+LIB_OBJECTS = $(LIB_SOURCES:.cpp=.o)
+	
+# Targets
+.PHONY: all clean
 
-# Generate corresponding .o files in obj/
-OBJ=$(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC))
+all: $(STATIC_LIB)
 
-# The final executable
-EXEC=$(BIN_DIR)/exe
-
-# Default target
-all: $(RUN)
-
-$(RUN): $(EXEC)
-	./$(EXEC)
-
-# Rule to link object files and create the final executable
-$(EXEC): $(OBJ)
-	@mkdir -p $(BIN_DIR)
-	$(CC) $(OBJ) -o $@
-
-# Rule to compile .cpp files into .o files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# Clean the build
+# Static library target
+$(STATIC_LIB): $(LIB_OBJECTS)
+	@mkdir -p $(LIB_DIR)
+	ar rcs $@ $^
+	
+# Compile object files
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+	
+# Clean up
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	rm -f $(SRC_DIR)/*.o 
+	rm -rf $(LIB_DIR)
+
