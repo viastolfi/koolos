@@ -4,5 +4,7 @@
 #include "Image.hpp"
 #include "Vector2.hpp"
 #include "Shape.hpp"
+#include "Edge.hpp"
+#include "Vertice.hpp"
 
 #endif // KOOLOS_HPP

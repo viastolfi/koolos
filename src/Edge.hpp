@@ -1,10 +1,13 @@
 #ifndef EDGE_HPP
 #define EDGE_HPP
 
-class Edge
+#include "Shape.hpp"
+
+class Edge : public Shape
 {
 public:
-    inline Edge(Vector2 s, Vector2 e) :start(s), end(e) {};
+    Edge(Vector2 s, Vector2 e);
+    std::vector<Vector2> draw() override;
 private:
     Vector2 start;
     Vector2 end;

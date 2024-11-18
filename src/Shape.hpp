@@ -4,15 +4,12 @@
 #include <vector>
 
 #include "Vector2.hpp"
-#include "Edge.hpp"
 
 class Shape
 {
 public:
     Shape();
-    void addEdge(Edge e);
-private:
-    std::vector<Edge> edges;
+    virtual std::vector<Vector2> draw() = 0;
 };
 
 #endif // SHAPE_HPP
