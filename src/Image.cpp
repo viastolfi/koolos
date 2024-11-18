@@ -9,12 +9,12 @@ void Image::draw(Shape* s)
     shapes.push_back(s);
 }
 
-void Image::setPixel(int x, int y, int r, int g, int b) {
+void Image::setPixel(int x, int y, Color c) {
     if (x < 0 || x >= width || y < 0 || y >= height)
         throw std::out_of_range("Pixel coordinates out of bounds");
-    pixels[y][x][0] = r;
-    pixels[y][x][1] = g;
-    pixels[y][x][2] = b;
+    pixels[y][x][0] = c.r;
+    pixels[y][x][1] = c.g;
+    pixels[y][x][2] = c.b;
 }
 
 void Image::generate()
@@ -29,7 +29,7 @@ void Image::generate()
 
         for (const auto& p : s_pixels)
         {
-            setPixel(p.x, p.y, 0, 255, 0);
+            setPixel(p.x, p.y, s->getColor());
         }
     }
 

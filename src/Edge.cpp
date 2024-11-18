@@ -4,6 +4,10 @@ Edge::Edge(Vector2 s, Vector2 e)
     :Shape(), start(s), end(e)
 {}
 
+Edge::Edge(Vector2 s, Vector2 e, Color c)
+    :Shape(c), start(s), end(e)
+{}
+
 std::vector<Vector2> Edge::draw()
 {
     std::vector<Vector2> pixels = {};

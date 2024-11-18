@@ -4,12 +4,18 @@
 #include <vector>
 
 #include "Vector2.hpp"
+#include "Colors.hpp"
 
 class Shape
 {
 public:
     Shape();
+    Shape(Color c);
     virtual std::vector<Vector2> draw() = 0;
+
+    inline Color getColor() { return c;};
+private:
+    Color c;
 };
 
 #endif // SHAPE_HPP

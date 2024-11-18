@@ -6,5 +6,6 @@
 #include "Shape.hpp"
 #include "Edge.hpp"
 #include "Vertice.hpp"
+#include "Colors.hpp"
 
 #endif // KOOLOS_HPP

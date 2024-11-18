@@ -8,6 +8,7 @@
 
 #include "Shape.hpp"
 #include "Vector2.hpp"
+#include "Colors.hpp"
 
 class Image 
 {
@@ -16,7 +17,7 @@ public:
     void draw(Shape* s);
     void generate();
     Vector2 getCenter();
-    void setPixel(int x, int y, int r, int g, int b);
+    void setPixel(int x, int y, Color c);
 private:
     std::string name;
     int height;

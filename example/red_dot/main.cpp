@@ -4,7 +4,9 @@ int main(int argc, char** argv)
 {
     Image* i = new Image("red_dot.ppm", 50, 50);
     Vector2 imageCenter = i->getCenter();
-    Shape* v = new Vertice(imageCenter);
+
+    // Vertices (Vector2 coordinates, Color c)
+    Shape* v = new Vertice(imageCenter, Colors::RED);
 
     i->draw(v);
     i->generate();
