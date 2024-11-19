@@ -13,7 +13,7 @@
 class Image 
 {
 public:
-    Image(std::string name, int h, int w);
+    Image(std::string name, int w, int h);
     void draw(Shape* s);
     void generate();
     Vector2 getCenter();

@@ -12,6 +12,7 @@ public:
     Shape();
     Shape(Color c);
     virtual std::vector<Vector2> draw() = 0;
+    virtual ~Shape() = default;
 
     inline Color getColor() { return c;};
 private:

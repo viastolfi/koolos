@@ -1,18 +1,21 @@
 #ifndef EDGE_HPP
 #define EDGE_HPP
 
+#include <cmath>
+
 #include "Shape.hpp"
 #include "Colors.hpp"
+#include "Vertice.hpp"
 
 class Edge : public Shape
 {
 public:
-    Edge(Vector2 s, Vector2 e);
-    Edge(Vector2 s, Vector2 e, Color c);
+    Edge(Vertice s, Vertice e);
+    Edge(Vertice s, Vertice e, Color c);
     std::vector<Vector2> draw() override;
 private:
-    Vector2 start;
-    Vector2 end;
+    Vertice start;
+    Vertice end;
 };
 
 #endif // EDGE_HPP

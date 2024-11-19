@@ -6,7 +6,7 @@ int main(int argc, char** argv)
     Vector2 imageCenter = i->getCenter();
 
     // Vertices (Vector2 coordinates, Color c)
-    Shape* v = new Vertice(imageCenter, Colors::RED);
+    Shape* v = new Vertice(imageCenter, Colors::GREEN);
 
     i->draw(v);
     i->generate();

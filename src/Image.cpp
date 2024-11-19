@@ -1,6 +1,6 @@
 #include "Image.hpp"
 
-Image::Image(std::string name, int h, int w)
+Image::Image(std::string name, int w, int h)
     :name(name), height(h), width(w), pixels(h, std::vector<std::vector<int>>(w, std::vector<int>(3, 255))), shapes()
 {}
 
