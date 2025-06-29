@@ -2,7 +2,7 @@
 #define KOOLOS_HPP
 
 #include "Image.hpp"
-#include "Vector2.hpp"
+#include "Pixel.hpp"
 #include "Shape.hpp"
 #include "Edge.hpp"
 #include "Vertice.hpp"

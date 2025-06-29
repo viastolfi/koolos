@@ -1,9 +1,15 @@
 #include "Shape.hpp"
 
 Shape::Shape()
-    :c(Colors::BLACK)
+    :stroke_color(Colors::BLACK)
 {}
 
 Shape::Shape(Color c)
-    :c(c)
+    :stroke_color(c)
 {}
+
+Shape* Shape::fillColor(Color c)
+{
+    fill_color = c;
+    return this;
+}

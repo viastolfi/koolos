@@ -1,16 +1,16 @@
 #include "Edge.hpp"
 
-Edge::Edge(Vertice s, Vertice e)
+Edge::Edge(Pixel s, Pixel e)
     :Shape(), start(s), end(e)
 {}
 
-Edge::Edge(Vertice s, Vertice e, Color c)
+Edge::Edge(Pixel s, Pixel e, Color c)
     :Shape(c), start(s), end(e)
 {}
 
-std::vector<Vector2> Edge::draw()
+std::vector<Pixel> Edge::draw()
 {
-    std::vector<Vector2> pixels = {};
+    std::vector<Pixel> pixels = {};
     if (end.x - start.x == 0)
     {
         int x = start.x;
@@ -18,7 +18,7 @@ std::vector<Vector2> Edge::draw()
         int ey = sy == start.y ? end.y : start.y;
         for (int y = sy; y <= ey; ++y)
         {
-            pixels.push_back(Vector2(x, y));    
+            pixels.push_back(Pixel(x, y, stroke_color));    
         }
     }
     else
@@ -39,7 +39,7 @@ std::vector<Vector2> Edge::draw()
 
         for (x = sx; x <= ex; ++x)
         {
-            pixels.push_back(Vector2(x, y)); 
+            pixels.push_back(Pixel(x, y, stroke_color)); 
             if ((e = e + e10) >= 0.5)
             {
                 y = y + 1;

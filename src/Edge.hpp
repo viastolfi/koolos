@@ -5,17 +5,16 @@
 
 #include "Shape.hpp"
 #include "Colors.hpp"
-#include "Vertice.hpp"
 
 class Edge : public Shape
 {
 public:
-    Edge(Vertice s, Vertice e);
-    Edge(Vertice s, Vertice e, Color c);
-    std::vector<Vector2> draw() override;
+    Edge(Pixel s, Pixel e);
+    Edge(Pixel s, Pixel e, Color c);
+    std::vector<Pixel> draw() override;
 private:
-    Vertice start;
-    Vertice end;
+    Pixel start;
+    Pixel end;
 };
 
 #endif // EDGE_HPP

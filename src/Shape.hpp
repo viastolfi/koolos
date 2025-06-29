@@ -2,8 +2,9 @@
 #define SHAPE_HPP
 
 #include <vector>
+#include <optional>
 
-#include "Vector2.hpp"
+#include "Pixel.hpp"
 #include "Colors.hpp"
 
 class Shape
@@ -11,12 +12,13 @@ class Shape
 public:
     Shape();
     Shape(Color c);
-    virtual std::vector<Vector2> draw() = 0;
+    virtual std::vector<Pixel> draw() = 0;
     virtual ~Shape() = default;
 
-    inline Color getColor() { return c;};
+    Shape* fillColor(Color c);
+    Color stroke_color;
+    std::optional<Color> fill_color;
 private:
-    Color c;
 };
 
 #endif // SHAPE_HPP

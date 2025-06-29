@@ -8,12 +8,12 @@
 class Square : public Shape
 {
 public:
-    Square(Vertice s, Vertice e);
-    Square(Vertice s, Vertice e, Color c);
-    std::vector<Vector2> draw() override;
+    Square(Pixel s, Pixel e);
+    Square(Pixel s, Pixel e, Color c);
+    std::vector<Pixel> draw() override;
 private:
-    Vertice start;
-    Vertice end;
+    Pixel start;
+    Pixel end;
 };
 
 #endif // SQUARE_HPP

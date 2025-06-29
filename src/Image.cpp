@@ -25,11 +25,11 @@ void Image::generate()
 
     for (const auto& s : shapes)
     {
-        std::vector<Vector2> s_pixels = s->draw();
+        std::vector<Pixel> s_pixels = s->draw();
 
         for (const auto& p : s_pixels)
         {
-            setPixel(p.x, p.y, s->getColor());
+            setPixel(p.x, p.y, p.color);
         }
     }
 
@@ -43,7 +43,7 @@ void Image::generate()
     file.close();
 }
 
-Vector2 Image::getCenter()
+Pixel Image::getCenter()
 {
-    return Vector2(height/ 2, width / 2);
+    return Pixel(height/ 2, width / 2);
 }
