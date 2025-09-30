@@ -1,6 +1,8 @@
 #ifndef COLORS_HPP
 #define COLORS_HPP
 
+namespace koolos {
+
 class Color
 {
 public:
@@ -16,6 +18,8 @@ public:
     static const Color GREEN;
     static const Color BLUE;
 };
+
+} // namespace koolos
 
 #endif // COLORS_HPP
 

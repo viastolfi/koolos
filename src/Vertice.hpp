@@ -1,6 +1,8 @@
 #ifndef VERTICE_HPP
 #define VERTICE_HPP
 
+namespace koolos {
+
 class Vertice
 {
 public:
@@ -9,5 +11,7 @@ public:
     int y;
     Pixel def;
 };
+
+} // namespace koolos
 
 #endif // VERTICE_HPP

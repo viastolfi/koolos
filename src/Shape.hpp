@@ -7,6 +7,8 @@
 #include "Pixel.hpp"
 #include "Colors.hpp"
 
+namespace koolos {
+
 class Shape
 {
 public:
@@ -20,5 +22,7 @@ public:
     std::optional<Color> fill_color;
 private:
 };
+
+} // namespace koolos
 
 #endif // SHAPE_HPP

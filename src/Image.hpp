@@ -10,6 +10,8 @@
 #include "Pixel.hpp"
 #include "Colors.hpp"
 
+namespace koolos {
+
 class Image 
 {
 public:
@@ -25,5 +27,7 @@ private:
     std::vector< std::vector< std::vector<int> > > pixels;
     std::vector<Shape*> shapes;
 };
+
+} // namespace koolos
 
 #endif // IMAGE_HPP

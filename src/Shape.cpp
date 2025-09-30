@@ -1,5 +1,7 @@
 #include "Shape.hpp"
 
+namespace koolos {
+
 Shape::Shape()
     :stroke_color(Colors::BLACK)
 {}
@@ -13,3 +15,5 @@ Shape* Shape::fillColor(Color c)
     fill_color = c;
     return this;
 }
+
+} // namespace koolos

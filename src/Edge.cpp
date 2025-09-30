@@ -1,5 +1,7 @@
 #include "Edge.hpp"
 
+namespace koolos {
+
 Edge::Edge(Pixel s, Pixel e)
     :Shape(), start(s), end(e)
 {}
@@ -50,3 +52,5 @@ std::vector<Pixel> Edge::draw()
     
     return pixels;
 }
+
+} // namespace koolos

@@ -3,6 +3,8 @@
 
 #include "Colors.hpp"
 
+namespace koolos {
+
 class Pixel
 {
 public:
@@ -12,5 +14,7 @@ public:
     int y;
     Color color;
 };
+
+} // namespace koolos
 
 #endif // VECTOR2_HPP

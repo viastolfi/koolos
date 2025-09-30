@@ -6,6 +6,8 @@
 #include "Shape.hpp"
 #include "Colors.hpp"
 
+namespace koolos {
+
 class Edge : public Shape
 {
 public:
@@ -16,5 +18,7 @@ private:
     Pixel start;
     Pixel end;
 };
+
+} // namespace koolos
 
 #endif // EDGE_HPP

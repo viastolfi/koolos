@@ -1,5 +1,7 @@
 #include "Image.hpp"
 
+namespace koolos {
+
 Image::Image(std::string name, int w, int h)
     :name(name), height(h), width(w), pixels(h, std::vector<std::vector<int>>(w, std::vector<int>(3, 255))), shapes()
 {}
@@ -47,3 +49,5 @@ Pixel Image::getCenter()
 {
     return Pixel(height/ 2, width / 2);
 }
+
+} // namespace koolos

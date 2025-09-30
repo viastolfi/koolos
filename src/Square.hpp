@@ -5,6 +5,8 @@
 #include "Vertice.hpp"
 #include "Edge.hpp"
 
+namespace koolos {
+
 class Square : public Shape
 {
 public:
@@ -15,5 +17,7 @@ private:
     Pixel start;
     Pixel end;
 };
+
+} // namespace koolos
 
 #endif // SQUARE_HPP

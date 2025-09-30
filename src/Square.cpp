@@ -1,5 +1,7 @@
 #include "Square.hpp"
 
+namespace koolos {
+
 Square::Square(Pixel s, Pixel e) 
     :Shape(), start(s), end(e)
 {}
@@ -35,3 +37,5 @@ std::vector<Pixel> Square::draw()
     }
     return pixels;
 }
+
+} // namespace koolos
