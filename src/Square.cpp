@@ -19,7 +19,7 @@ std::vector<Pixel> Square::draw()
 
     std::vector<Pixel> vs = {start, i, end, j};
 
-    for (int idx = 0; idx < vs.size(); ++idx)
+    for (int idx = 0; (size_t) idx < vs.size(); ++idx)
     {
         Edge e = Edge(vs[idx], vs[(idx+1) % vs.size()], stroke_color);
         std::vector<Pixel> p = e.draw();

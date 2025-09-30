@@ -2,7 +2,6 @@
 #define SQUARE_HPP
 
 #include "Shape.hpp"
-#include "Vertice.hpp"
 #include "Edge.hpp"
 
 namespace koolos {
