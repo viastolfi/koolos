@@ -11,8 +11,8 @@ public:
   Drawer* strokeColor(Color c);
   Drawer* fillColor(Color c);
   Drawer* addPixel(Pixel p);
-private:
   Canva* canva;
+private:
 };
 
 } // namespace koolos
