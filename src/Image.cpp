@@ -6,6 +6,17 @@ Image::Image(std::string name, int w, int h)
     :name(name), height(h), width(w), pixels(h, std::vector<std::vector<int>>(w, std::vector<int>(3, 255))), shapes()
 {}
 
+void Image::attachDrawer(Drawer* d) {
+  drawer = d;
+}
+
+void Image::draw() {
+  if(!drawer.has_value())
+    throw 1; // TODO: create custom exception
+
+  shapes.push_back(drawer.value()->canva);
+}
+
 void Image::draw(Shape* s) 
 {
     shapes.push_back(s);
