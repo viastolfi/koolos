@@ -3,6 +3,7 @@
 namespace koolos {
 
 Drawer::Drawer()
+  :cursor(Pixel(0, 0))
 {
   canva = new Canva();
 }
@@ -19,6 +20,21 @@ Drawer* Drawer::strokeColor(Color c) {
 
 Drawer* Drawer::addPixel(Pixel p) {
   canva->addPixel(p);
+  return this;
+}
+
+Drawer* Drawer::moveTo(Pixel p) {
+  cursor = p;
+  return this;
+}
+
+Drawer* Drawer::lineTo(Pixel p) {
+  canva->addShape(new Edge(cursor, p, canva->stroke_color));  
+  return this;
+}
+
+Drawer* Drawer::lineTo(Pixel p, Color c) {
+  canva->addShape(new Edge(cursor, p, c));
   return this;
 }
 

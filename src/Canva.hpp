@@ -15,7 +15,9 @@ public:
   Canva();
   std::vector<Pixel> draw() override;
   void addPixel(Pixel p);
+  void addShape(Shape* s);
 private:
+  std::vector<Shape*> shapes;
   std::vector<Pixel> vertices;
 };
   
