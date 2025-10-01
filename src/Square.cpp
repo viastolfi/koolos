@@ -28,9 +28,9 @@ std::vector<Pixel> Square::draw()
 
     if (fill_color.has_value())
     {
-        for (int i = start.x - 1; i <= end.x -1; ++i)
+        for (int i = start.x + 1; i <= end.x -1; ++i)
         {
-            Edge e = Edge(Pixel(i, start.y - 1), Pixel(i, end.y - 1), fill_color.value());
+            Edge e = Edge(Pixel(i, start.y + 1), Pixel(i, end.y - 1), fill_color.value());
             std::vector<Pixel> p = e.draw();
             pixels.insert(pixels.end(), p.begin(), p.end());
         }
