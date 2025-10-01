@@ -3,5 +3,8 @@ obj/
 
 .DS_Store
 
+*.swo
+*.swp
+
 src/*.o
 lib/

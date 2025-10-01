@@ -46,6 +46,9 @@ std::vector<Pixel> Edge::draw()
             {
                 y = y + 1;
                 e = e + e01;
+            } else {
+              y = y - 1;
+              e = e - e01;
             }
         } 
     }
