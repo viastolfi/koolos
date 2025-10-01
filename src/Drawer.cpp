@@ -22,4 +22,8 @@ Drawer* Drawer::addPixel(Pixel p) {
   return this;
 }
 
+Canva* Drawer::getCanva() {
+  return canva;
+}
+
 } // namespace koolos

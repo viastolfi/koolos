@@ -14,7 +14,7 @@ void Image::draw() {
   if(!drawer.has_value())
     throw 1; // TODO: create custom exception
 
-  shapes.push_back(drawer.value()->canva);
+  shapes.push_back(drawer.value()->getCanva());
 }
 
 void Image::draw(Shape* s) 
