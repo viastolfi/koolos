@@ -3,6 +3,7 @@
 
 #include "Shape.hpp"
 #include "Pixel.hpp"
+#include "Edge.hpp"
 
 #include <vector>
 
@@ -13,6 +14,7 @@ class Canva : public Shape
 public:
   Canva();
   std::vector<Pixel> draw() override;
+  void addPixel(Pixel p);
 private:
   std::vector<Pixel> vertices;
 };

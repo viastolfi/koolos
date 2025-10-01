@@ -12,4 +12,14 @@ Drawer* Drawer::fillColor(Color c) {
   return this;
 }
 
+Drawer* Drawer::strokeColor(Color c) {
+  canva->stroke_color = c;
+  return this;
+}
+
+Drawer* Drawer::addPixel(Pixel p) {
+  canva->addPixel(p);
+  return this;
+}
+
 } // namespace koolos
