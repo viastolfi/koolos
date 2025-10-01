@@ -3,62 +3,59 @@
 namespace koolos {
 
 Image::Image(std::string name, int w, int h)
-    :name(name), height(h), width(w), pixels(h, std::vector<std::vector<int>>(w, std::vector<int>(3, 255))), shapes()
+  :name(name), height(h), width(w), pixels(h, std::vector<std::vector<int>>(w, std::vector<int>(3, 255))), shapes()
 {}
 
 void Image::attachDrawer(Drawer* d) {
   drawer = d;
 }
 
-void Image::draw() {
-  if(!drawer.has_value())
-    throw 1; // TODO: create custom exception
-
-  shapes.push_back(drawer.value()->getCanva());
-}
-
 void Image::draw(Shape* s) 
 {
-    shapes.push_back(s);
+  shapes.push_back(s);
 }
 
 void Image::setPixel(int x, int y, Color c) {
-    if (x < 0 || x >= width || y < 0 || y >= height)
-        throw std::out_of_range("Pixel coordinates out of bounds");
-    pixels[y][x][0] = c.r;
-    pixels[y][x][1] = c.g;
-    pixels[y][x][2] = c.b;
+  if (x < 0 || x >= width || y < 0 || y >= height)
+    throw std::out_of_range("Pixel coordinates out of bounds");
+  pixels[y][x][0] = c.r;
+  pixels[y][x][1] = c.g;
+  pixels[y][x][2] = c.b;
 }
 
 void Image::generate()
 {
-    std::ofstream file(name);
-    if (!file)
-        throw std::ios_base::failure("Failed to open file");
+  if (drawer.has_value()) {
+    shapes.push_back(drawer.value()->getCanva());    
+  }
 
-    for (const auto& s : shapes)
+  std::ofstream file(name);
+  if (!file)
+    throw std::ios_base::failure("Failed to open file");
+
+  for (const auto& s : shapes)
+  {
+    std::vector<Pixel> s_pixels = s->draw();
+
+    for (const auto& p : s_pixels)
     {
-        std::vector<Pixel> s_pixels = s->draw();
-
-        for (const auto& p : s_pixels)
-        {
-            setPixel(p.x, p.y, p.color);
-        }
+      setPixel(p.x, p.y, p.color);
     }
+  }
 
-    file << "P3\n" << width << " " << height << "\n255\n";
-    for (const auto& row : pixels) {
-        for (const auto& pixel : row) {
-            file << pixel[0] << " " << pixel[1] << " " << pixel[2] << " ";
-        }
-        file << "\n";
+  file << "P3\n" << width << " " << height << "\n255\n";
+  for (const auto& row : pixels) {
+    for (const auto& pixel : row) {
+      file << pixel[0] << " " << pixel[1] << " " << pixel[2] << " ";
     }
-    file.close();
+    file << "\n";
+  }
+  file.close();
 }
 
 Pixel Image::getCenter()
 {
-    return Pixel(height/ 2, width / 2);
+  return Pixel(height/ 2, width / 2);
 }
 
 } // namespace koolos

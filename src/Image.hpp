@@ -19,7 +19,6 @@ public:
     Image(std::string name, int w, int h);
     void attachDrawer(Drawer* d);
 
-    void draw();
     void draw(Shape* s);
 
     void generate();
