@@ -10,7 +10,6 @@ int main(int argc, char** argv) {
 
   i->attachDrawer(d);
 
-  i->draw();
   i->generate();
 
   delete d;
