@@ -10,7 +10,7 @@ int main(int argc, char** argv)
   
     i->attachDrawer(d);
 
-    d->strokeColor(Colors::BLUE);
+    d->stroke_color = Colors::BLUE;
     d->moveTo(Pixel(0,10))->lineTo(Pixel(100, 40));
     d->moveTo(Pixel(500, 200))->lineTo(Pixel(500, 800), Colors::RED);
 
