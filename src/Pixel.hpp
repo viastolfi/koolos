@@ -15,6 +15,10 @@ public:
     Color color;
 };
 
+inline bool operator==(Pixel p1, Pixel p2) {
+  return p1.x == p2.x && p1.y == p2.y;
+}
+
 } // namespace koolos
 
 #endif // VECTOR2_HPP
