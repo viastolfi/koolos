@@ -8,7 +8,8 @@ int main(int argc, char** argv) {
   koolos::Drawer* d = new koolos::Drawer();
   d->strokeColor(Colors::GREEN)->addPixel(Pixel(1,1))->addPixel(Pixel(1, 199))->addPixel(Pixel(199, 1));
 
-  i->draw(d->canva);
+  i->attachDrawer(d);
+
   i->generate();
 
   delete d;
